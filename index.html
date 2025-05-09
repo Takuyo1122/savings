@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>パスワード認証</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 100px; }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>PASSWORD</h1>
+  <input type="password" id="password" placeholder="Type in">
+  <button onclick="checkPassword()">Go</button>
+  <p id="error" style="color: red;"></p>
+
+  <script>
+    const correctPassword = "Hello"; // 正しいパスワード
+    const redirectURL = "money.html";     // パスワード正解時に飛ばす先（同じフォルダ内）
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      if (input === correctPassword) {
+        window.location.href = redirectURL; // 正解ならページ遷移
+      } else {
+        document.getElementById("error").textContent = "🔪🩸";
+      }
+    }
+  </script>
+
+</body>
+</html>
