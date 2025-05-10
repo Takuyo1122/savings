@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>数字記録グラフ</title>
+  <title>graph</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- HTMLの<head>内に入れる -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -116,11 +116,10 @@
 </head>
 <body>
 
-  <h1>数字を記録してグラフ表示</h1>
 
   <div>
-    <input type="number" id="numberInput" placeholder="数字を入力" />
-    <button onclick="addEntry()">記録</button>
+    <input type="number" id="numberInput" placeholder="Type in" />
+    <button onclick="addEntry()">Go</button>
   </div>
 
   <div id="chartContainer">
@@ -150,7 +149,7 @@
 
     function render() {
       const historyDiv = document.getElementById("history");
-      historyDiv.innerHTML = "<h3>📜 記録履歴:</h3>" + data.map((d, i) => {
+      historyDiv.innerHTML = "<h3>📜 History:</h3>" + data.map((d, i) => {
         return `
           <div class="entry">
             <div>${new Date(d.time).toLocaleString()} - <strong>${d.value}</strong></div>
